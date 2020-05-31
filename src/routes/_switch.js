@@ -4,6 +4,7 @@ var state = false;
 
 function switchLight() {
     // Toggle the state of the LED connected to GPIO17 every 200ms
+    console.log("Switching")
     if (state == false) {
         state = true;
         led.writeSync(1);
