@@ -9,7 +9,7 @@ Live Space-Camera 2000
 <p>Is the year 2000, we achieved instant transmission of infinite information thanks to the rare Elerium-115 found on the dark side of the Moon.</p>
 <img src="/cmlogo.gif" alt="earth link">
 <p><img src="/6kb.gif" alt="earth spinning"> A window to the future:<img  src="/6kb.gif" alt="earth spinning"></p>
-<iframe title="space camera 2000" width="960px" height="540px" src="http://localhost">PONG</iframe>
+<iframe title="space camera 2000" width="960px" height="540px" src="http://192.168.1.61">PONG</iframe>
 <br>
 <br>
 <button on:click={switchLight()}>Switch light</button>
