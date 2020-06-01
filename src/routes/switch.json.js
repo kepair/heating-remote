@@ -10,12 +10,10 @@ export function get(req, res) {
     if (state == false) {
         state = true;
         led.writeSync(1);
-        led.unexport();
         res.end({ state });
     } else {
         state = false;
         led.writeSync(0);
-        led.unexport();
         res.end({ state });
     }
 }
