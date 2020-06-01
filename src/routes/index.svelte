@@ -12,7 +12,7 @@ Live Space-Camera 2000
 <iframe title="space camera 2000" width="960px" height="540px" src="http://192.168.1.61">PONG</iframe>
 <br>
 <br>
-<button on:click={switchLight()}>Switch light</button>
+<button on:click={switchLight}>Switch light</button>
 
 <style>
 button{
@@ -31,8 +31,10 @@ button{
 		const data = await res.json();
 
 		if (res.status === 200) {
+			console.log("called successfully");
 			return { data };
 		} else {
+			console.log("called error");
 			this.error(res.status, data.message);
 		}
 	}
