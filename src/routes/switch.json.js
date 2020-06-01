@@ -7,6 +7,7 @@ export function get(req, res) {
         'Content-Type': 'application/json'
     });
     console.log("Switching")
+    console.log(state)
     if (state == false) {
         state = true;
         led.writeSync(1);
