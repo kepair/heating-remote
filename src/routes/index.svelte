@@ -31,7 +31,7 @@ button{
 		const data = await res.json();
 
 		if (res.status === 200) {
-			return { post: data };
+			return { data };
 		} else {
 			this.error(res.status, data.message);
 		}
