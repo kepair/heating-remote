@@ -15,7 +15,7 @@ Live Space-Camera 2000
 
 <br>
 <br>
-<button on:click={switchLight}>Switch light</button>
+<button  data-goatcounter-click="light!" on:click={switchLight}>Switch light</button>
 
 <style>
 iframe{
