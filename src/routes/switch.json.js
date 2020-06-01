@@ -10,11 +10,12 @@ export function get(req, res) {
     console.log(state)
     if (state == false) {
         state = true;
-        console.log(state)
+        console.log("Switching to: " + state)
         led.writeSync(1);
         res.end(JSON.stringify({ state }));
     } else {
         state = false;
+        console.log("Switching to: " + state)
         led.writeSync(0);
         res.end(JSON.stringify({ state }));
     }
