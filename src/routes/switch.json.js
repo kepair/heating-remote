@@ -2,18 +2,18 @@ const Gpio = require('onoff').Gpio; // Gpio class
 const led = new Gpio(17, 'out'); // Export GPIO17 as an output
 var state = false;
 
-function switchLight() {
-    // Toggle the state of the LED connected to GPIO17 every 200ms
+export function get(req, res) {
+    res.writeHead(200, {
+        'Content-Type': 'application/json'
+    });
     console.log("Switching")
     if (state == false) {
         state = true;
         led.writeSync(1);
-        return
+        res.end({ state });
     } else {
         state = false;
         led.writeSync(0);
-        return
+        res.end({ state });
     }
-};
-
-export default switchLight();
+}

@@ -22,10 +22,19 @@ button{
 	background-color: darkslategray;
 	color: aquamarine;
 }
-
 </style>
 
 <script>
-import switchLight from './_switch.js'
+	async function switchLight() {
+		// the `slug` parameter is available because
+		// this file is called [slug].svelte
+		const res = await fetch(`http://localhost:3000/switch.json`);
+		const data = await res.json();
 
+		if (res.status === 200) {
+			return { post: data };
+		} else {
+			this.error(res.status, data.message);
+		}
+	}
 </script>
