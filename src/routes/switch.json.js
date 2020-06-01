@@ -10,11 +10,12 @@ export function get(req, res) {
     console.log(state)
     if (state == false) {
         state = true;
+        console.log(state)
         led.writeSync(1);
-        res.end({ state });
+        res.end(JSON.stringify({ state }));
     } else {
         state = false;
         led.writeSync(0);
-        res.end({ state });
+        res.end(JSON.stringify({ state }));
     }
 }
