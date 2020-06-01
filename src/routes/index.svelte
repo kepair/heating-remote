@@ -28,7 +28,7 @@ button{
 	async function switchLight() {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
-		const res = await fetch(`http://localhost:3000/switch.json`);
+		const res = await fetch(`http://192.168.1.61:3000/switch.json`);
 		const data = await res.json();
 
 		if (res.status === 200) {
