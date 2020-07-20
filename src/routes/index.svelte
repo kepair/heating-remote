@@ -4,18 +4,17 @@ Live Space-Camera 2000
 </title>
 </head>
 
-<img src="/title.png" width="100%" alt="LIVE SPACE-CAMERA 2000">
-
-<p>Is the year 2000, we achieved instant transmission of infinite information thanks to the rare Elerium-115 found on the dark side of the Moon.</p>
-<img src="/cmlogo.gif" alt="earth link">
-<p><img src="/6kb.gif" alt="earth spinning"> A window to the future:<img  src="/6kb.gif" alt="earth spinning"></p>
+<img src="/window.png" width="90%" alt="LIVE SPACE-CAMERA 2000">
 
 
   <iframe title="space camera 2000"  src="https://c4hs7a56.kepair.eu">PONG</iframe>
 
 <br>
 <br>
-<button  data-goatcounter-click="light!" on:click={switchLight}>Switch light</button>
+<!--<button on:click={switchLight}>Switch light</button>-->
+<!-- weather widget start -->
+<a target="_blank" href="https://www.booked.net/weather/barcelona-45"><img src="https://w.bookcdn.com/weather/picture/25_45_1_1_ecf0f1_250_bdc3c7_9da2a6_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=18475" alt="booked.net"/></a>
+<!-- weather widget end -->
 
 <style>
 iframe{
