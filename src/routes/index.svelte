@@ -12,8 +12,20 @@ Live Space-Camera 2000
 <br>
 
 
-<button on:click={switchLight}>Turn {nextState}</button>
+<button class="button" on:click={switchLight}>Turn {nextState}</button>
 
+<style>
+.button {
+  transition-duration: 0.4s;
+  font-size: large;
+}
+
+.button:hover {
+  background-color: black; /* Green */
+  color: white;
+}
+
+</style>
 
 
 <script>
