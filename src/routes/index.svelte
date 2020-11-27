@@ -4,24 +4,17 @@ Live Space-Camera 2000
 </title>
 </head>
 
-<h1>Hit the boiler</h1>
+<h1>The boiler is:</h1>
 
-
+<h2>{state}</h2>
 
 <br>
 <br>
 
 
-<button on:click={switchLight}>Turn {state}</button>
+<button on:click={switchLight}>Turn {nextState}</button>
 
 
-<style>
-button{
-	border-radius: 8px;
-	padding: 10px;
-	font-size: 150%;
-}
-</style>
 
 <script>
 
@@ -31,7 +24,8 @@ button{
 		console.log(data.state)
 		return data.state;
 	}
-	let state = "On";
+	let state = "Off";
+	let nextState = "On"
 	let image = "/cold.png"; 
 
 	
@@ -47,10 +41,12 @@ button{
 			console.log(data)
 			if(data.state == true){
 				state = "Off";
-				image = "/burning.png";}
+				nextState = "On";
+				image = "/cold.png";}
 			else{
 				state = "On";
-				image = "/cold.png"}
+				nextState = "Off";
+				image = "/burning.png"}
 			return { data };
 		} else {
 			console.log("called error");
