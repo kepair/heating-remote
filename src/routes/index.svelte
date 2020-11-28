@@ -1,28 +1,24 @@
 <head>
 <title>
-Live Space-Camera 2000
+Boiler
 </title>
 </head>
 
-<h1>The boiler is:</h1>
-
-<h2>{state}</h2>
-
+<h2>The boiler is:</h2>
+<h1>{state}</h1>
 <br>
-<br>
-
-
-<button class="button" on:click={switchLight}>Turn {nextState}</button>
-
+<button id="btn" class="{btnclass}" on:click={switchLight}>Turn {nextState}</button>
+<i class="button-on"></i>
 <style>
-.button {
-  transition-duration: 0.4s;
-  font-size: large;
+
+.button-off {
+  background-color: var(--white) !important;
+  color: var(--strike-red) !important
 }
 
-.button:hover {
-  background-color: black; /* Green */
-  color: white;
+.button-on {
+  background-color: var(--main) !important;
+  color: var(--white) !important
 }
 
 </style>
@@ -38,11 +34,13 @@ Live Space-Camera 2000
 	}
 	let state = "Off";
 	let nextState = "On"
-	let image = "/cold.png"; 
+	let image = "/cold.png";
+	document.body.style.backgroundColor = "var(--main)";
+	document.body.style.color = "var(--white)";
+	let btnclass = "button-off"
 
-	
 
-	
+
 	async function switchLight() {
 		console.log("calling switch")
 		const res = await fetch(`/switch.json`);
@@ -54,16 +52,23 @@ Live Space-Camera 2000
 			if(data.state == true){
 				state = "Off";
 				nextState = "On";
-				image = "/cold.png";}
+				document.body.style.backgroundColor = "var(--main)";
+				document.body.style.color = "var(--white)";
+				btnclass = "button-off"
+
+			}
 			else{
 				state = "On";
 				nextState = "Off";
-				image = "/burning.png"}
+				document.body.style.backgroundColor = "var(--strike-red)";
+				document.body.style.color = "var(--black)";
+				btnclass = "button-on"
+			}
 			return { data };
 		} else {
 			console.log("called error");
 			this.error(res.status, data.message);
 		}
 	}
-	
+
 </script>

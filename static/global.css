@@ -1,5 +1,30 @@
+:root {
+    --white: #F1EEE6;
+    --black: #2F3435;
+    --main: #0F4C81;
+    --strike-red: #ED7464;
+    --strike-green: #C0D725;
+
+}
+h1 {
+    font-size: 300%;
+}
+
 body {
-    color: rgb(180, 172, 125);
+	transition-duration: 0.4s;
     text-align: center;
     font-size: 200%;
+    font-family: 'Texturina', serif;
+}
+
+button {
+	transition-duration: 0.4s;
+    font-size: 200%;
+    font-family: 'Texturina', serif;
+    font-weight:600;
+    border-width: 0px;
+  border-radius: 10px;
+  
+  padding: 20px;
+  padding-top: 0px;
 }
