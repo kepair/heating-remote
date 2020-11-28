@@ -26,16 +26,16 @@ Boiler
 	import { onMount } from 'svelte';
 	const states = [
 		{
-			state: "Off",
-			nextState: "On",
-			class: "off",
-			image: "url(/snow.gif)"
-		},
-		{
 			state: "On",
 			nextState: "Off",
 			class: "on",
 			image: "url(/warm.gif)"
+		},
+		{
+			state: "Off",
+			nextState: "On",
+			class: "off",
+			image: "url(/snow.gif)"
 		}
 	]
 	export let state;
