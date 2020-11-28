@@ -1,5 +1,7 @@
 # heating-remote
 
+Branch gif is the most updated.
+
 Using the default Sapper template, I built an App to control the heating remotely.
 My heating didn't have a thermostate, and I had a Raspberry Pi and a relay laying around the room.
 
