@@ -3,22 +3,21 @@
 Boiler
 </title>
 </head>
-
-<h2>The boiler is:</h2>
-<h1>{state}</h1>
 <br>
+<br>
+
 <button id="btn" class="{btnclass}" on:click={switchLight}>Turn {nextState}</button>
 <i class="button-on"></i>
 <style>
 
 .button-off {
-  background-color: var(--white) !important;
-  color: var(--strike-red) !important
+  background-image: url(/warm.gif);
+  color: var(--strike-green) 
 }
 
 .button-on {
-  background-color: var(--main) !important;
-  color: var(--white) !important
+  background-image: url(/snow.gif);
+  color: var(--white) 
 }
 
 </style>
@@ -35,7 +34,8 @@ Boiler
 	let state = "Off";
 	let nextState = "On"
 	let image = "/cold.png";
-	document.body.style.backgroundColor = "var(--main)";
+	document.body.style.backgroundImage = "url(/snow.gif)"
+	
 	document.body.style.color = "var(--white)";
 	let btnclass = "button-off"
 
@@ -52,7 +52,7 @@ Boiler
 			if(data.state == true){
 				state = "Off";
 				nextState = "On";
-				document.body.style.backgroundColor = "var(--main)";
+				document.body.style.backgroundImage = "url(/snow.gif)"
 				document.body.style.color = "var(--white)";
 				btnclass = "button-off"
 
@@ -60,7 +60,7 @@ Boiler
 			else{
 				state = "On";
 				nextState = "Off";
-				document.body.style.backgroundColor = "var(--strike-red)";
+				document.body.style.backgroundImage = "url(/warm.gif)"
 				document.body.style.color = "var(--black)";
 				btnclass = "button-on"
 			}
