@@ -3,72 +3,57 @@
 Boiler
 </title>
 </head>
+
+
 <br>
 <br>
+<button id="btn" class="{show.class}" on:click={switchLight}>Turn {show.nextState}</button>
 
-<button id="btn" class="{btnclass}" on:click={switchLight}>Turn {nextState}</button>
-<i class="button-on"></i>
-<style>
 
-.button-off {
-  background-image: url(/warm.gif);
-  color: var(--strike-green) 
-}
 
-.button-on {
-  background-image: url(/snow.gif);
-  color: var(--white) 
-}
+<script context="module">
 
-</style>
+	export async function preload(page, session) {
 
+		const res = await this.fetch(`/relay.json`);
+		const data = await res.json();
+		const state = data.state;
+		return { state };
+	}
+</script>
 
 <script>
-
-	async function checkState(){
-		const res = await fetch(`/check.json`);
-		const data = await res.json();
-		console.log(data.state)
-		return data.state;
-	}
-	let state = "Off";
-	let nextState = "On"
-	let image = "/cold.png";
-	document.body.style.backgroundImage = "url(/snow.gif)"
-	
-	document.body.style.color = "var(--white)";
-	let btnclass = "button-off"
-
-
+	import { onMount } from 'svelte';
+	const states = [
+		{
+			state: "Off",
+			nextState: "On",
+			class: "off",
+			image: "url(/snow.gif)"
+		},
+		{
+			state: "On",
+			nextState: "Off",
+			class: "on",
+			image: "url(/warm.gif)"
+		}
+	]
+	export let state;
+	let show = states[state];
+	onMount(() => {
+		document.body.style.backgroundImage = show.image
+  	});
 
 	async function switchLight() {
-		console.log("calling switch")
-		const res = await fetch(`/switch.json`);
+		const res = await fetch('/relay.json', {method: 'POST'});
 		const data = await res.json();
 
 		if (res.status === 200) {
-			console.log("called successfully");
-			console.log(data)
-			if(data.state == true){
-				state = "Off";
-				nextState = "On";
-				document.body.style.backgroundImage = "url(/snow.gif)"
-				document.body.style.color = "var(--white)";
-				btnclass = "button-off"
-
-			}
-			else{
-				state = "On";
-				nextState = "Off";
-				document.body.style.backgroundImage = "url(/warm.gif)"
-				document.body.style.color = "var(--black)";
-				btnclass = "button-on"
-			}
-			return { data };
+			show = states[data.state];
+			document.body.style.backgroundImage = show.image
 		} else {
 			console.log("called error");
 			this.error(res.status, data.message);
 		}
 	}
-
 </script>
