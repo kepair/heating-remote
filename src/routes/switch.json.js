@@ -1,4 +1,4 @@
-var state = false;
+/* var state = false;
 export function get(req,res) {
     res.writeHead(200, {
         'Content-Type': 'application/json'
@@ -14,9 +14,9 @@ export function get(req,res) {
         console.log("Switching to: " + state)
         res.end(JSON.stringify({ state }));
     }
-}
+} */
 
-/* const Gpio = require('onoff').Gpio; // Gpio class
+const Gpio = require('onoff').Gpio; // Gpio class
 const led = new Gpio(4, 'out'); // Export GPIO17 as an output
 var state = false;
 
@@ -37,4 +37,4 @@ export function get(req, res) {
         led.writeSync(0);
         res.end(JSON.stringify({ state }));
     }
-} */
+} 
