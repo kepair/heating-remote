@@ -1,5 +1,7 @@
 # heating-remote
 
+[More info here](https://pedroir.nz/blog/heating_remote/)
+
 Branch gif is the most updated.
 
 Using the default Sapper template, I built an App to control the heating remotely.
