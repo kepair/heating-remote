@@ -2,13 +2,13 @@
 
 [More info here](https://pedroir.nz/blog/heating_remote/)
 
-Branch gif is the most updated.
+Branch `gif` is the most updated.
 
-Using the default Sapper template, I built an App to control the heating remotely.
-My heating didn't have a thermostate, and I had a Raspberry Pi and a relay laying around the room.
+This is a basic Node web app that contains a button. Using a Raspberry Pi and a relay, you can control any circuit (on/off). I built this to control the heating in my house by connecting the relay to the boiler (I don't have a thermostate).
 
-Now I can control the heating from a website, with a button.
+The web app was built using the default template of [Sapper](https://sapper.svelte.dev/docs/) template. The main page contains a button that calls the endpoint `/relay.json`. It supports GET and POST requests:
 
-As a next step, I'd like to also have a thermometer to have a proper thermostate so I set a desired temperature.
+- GET: Answers with the current state of the relay
+- POST: Switches the state of the relay.
 
-Please open issues or send and email to irekepa@gmail.
+When loading the main page, a GET request is done to show the right state any time you load the app.
