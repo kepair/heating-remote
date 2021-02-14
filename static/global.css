@@ -23,8 +23,17 @@ button {
     font-family: 'Texturina', serif;
     font-weight:600;
     border-width: 0px;
-  border-radius: 10px;
-  
-  padding: 20px;
-  padding-top: 0px;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.on  {
+    background-image: url(/snow.gif);
+    color: var(--white) 
+}
+
+.off  {
+    background-image: url(/warm.gif);
+    color: var(--strike-green) 
 }
