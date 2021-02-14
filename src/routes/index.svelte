@@ -4,13 +4,11 @@ Boiler
 </title>
 </head>
 
-
 <br>
 <br>
 <button id="btn" class="{show.class}" on:click={switchLight}>Turn {show.nextState}</button>
 
-
-
+<!-- Script that is executed server-side before sending the page to the client-->
 <script context="module">
 
 	export async function preload(page, session) {
@@ -22,6 +20,7 @@ Boiler
 	}
 </script>
 
+<!-- Script executed when pressing the button-->
 <script>
 	import { onMount } from 'svelte';
 	const states = [
