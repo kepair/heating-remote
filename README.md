@@ -7,7 +7,7 @@ The web app has two endpoints:
 - An index page with a simple button to switch the relay on and off. 
 - A /relay.json endpoint that supports two HTTP methods: GET gives the current state of the relay and POST changes the state.
 
-When the index page is loaded, it checks the current state to show the relevant message ("Turn on" or "Turn off") in the button. When the button is pressed, a POST message is sent and the state is changed.
+When the index page is loaded, it checks the current state to show the relevant message ("Turn on" or "Turn off") in the button. When the button is pressed, a POST message is sent and the state is changed. There, using the onoff npm library, I can control the digital pins from the Raspberry
 
 The web app was built with [Sapper](https://sapper.svelte.dev/docs/), a Node framework to built lightweight apps.
 
